@@ -23,7 +23,7 @@ TERM_GRACE_SECONDS=${TERM_GRACE_SECONDS:-10}
 # Match actual executable basenames from /proc/PID/exe, not command-line keywords.
 # These commands bypass CPU limits only; memory limits still apply.
 # Do not add general-purpose interpreters such as bash, python, or java.
-CPU_ALLOWLIST=${CPU_ALLOWLIST:-"gzip gunzip pigz unpigz bzip2 bunzip2 pbzip2 lbzip2 xz unxz pixz zstd unzstd lz4 zip unzip tar rsync scp sftp ssh curl wget cp mv dd rclone bbcp"}
+CPU_ALLOWLIST=${CPU_ALLOWLIST:-"gzip gunzip pigz unpigz bzip2 bunzip2 pbzip2 lbzip2 xz unxz pixz zstd unzstd lz4 zip unzip tar rsync scp sftp ssh sshd curl wget cp mv dd rclone bbcp"}
 
 die() { printf '%s\n' "$*" >&2; exit 1; }
 for setting in SAMPLE_SECONDS CPU_PERCENT CPU_SECONDS MEMORY_GIB MEMORY_PERCENT MEMORY_SECONDS TERM_GRACE_SECONDS; do

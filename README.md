@@ -20,3 +20,4 @@ A continuous Linux/Bash 4+ HPC login-node guard monitoring all accounts; root UI
 - Dry run (default): `sudo bash loginGuard.sh`; enable termination: `sudo env DRY_RUN=0 bash loginGuard.sh`.
 - Termination sends TERM, then KILL after 10 seconds if needed; settings can be overridden via environment variables.
 - Run one instance per node (not periodic cron); sample every 60 seconds; local logs/lock: `/var/log/loginGuard/`.
+- Install and start as a systemd service: `sudo bash loginGuard.sh-systemd-install.sh` (self-contained; creates an empty `/etc/loginGuard/userwhitelist` on first install); to enable termination, set `DRY_RUN=0` in `/etc/loginGuard/loginGuard.conf`, then run `sudo systemctl restart loginGuard.service`.
